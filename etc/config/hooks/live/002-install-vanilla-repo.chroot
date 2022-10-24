@@ -13,6 +13,7 @@ sudo apt install -y \
     vanilla-beta-notice \
     vanilla-control-center \
     vanilla-backgrounds \
+    base-files=12.2ubuntu3+vanilla-1 \
     micro-distrobox \
     apx \
     almost
