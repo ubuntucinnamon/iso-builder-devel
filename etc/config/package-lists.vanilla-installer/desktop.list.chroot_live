@@ -1,3 +1,4 @@
+btrfs-progs
 casper
 expect
 gparted
@@ -15,6 +16,7 @@ dmraid
 wamerican
 fwupdate
 mokutil
-calamares
 zram-config
 rsync
+distinst
+vanilla-installer

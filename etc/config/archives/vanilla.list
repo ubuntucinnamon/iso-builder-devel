@@ -1,0 +1,1 @@
+deb [signed-by=/usr/share/keyrings/vanilla-archive-keyring.gpg] https://repo.vanillaos.org/@BASECODENAME ./
