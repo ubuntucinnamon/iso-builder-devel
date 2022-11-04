@@ -117,6 +117,8 @@ ibus-gtk
 ibus-gtk3
 ibus-table
 im-config
+language-pack-en
+language-pack-gnome-en
 kerneloops
 laptop-detect
 libglib2.0-bin
@@ -127,6 +129,7 @@ libproxy1-plugin-networkmanager
 libwmf0.2-7-gtk
 memtest86+
 mousetweaks
+ntfs-3g
 nautilus
 network-manager-config-connectivity-ubuntu
 network-manager-openvpn-gnome
