@@ -2,7 +2,6 @@
 # Description: Setup Vanilla utilities
 
 sudo almost enter rw
-sudo almost config set almost::PersistModeStatus 1
 
 mkdir -p /etc/skel/.config/autostart
 if [ -f /usr/share/applications/io.github.vanilla-os.FirstSetup.desktop ]; then
