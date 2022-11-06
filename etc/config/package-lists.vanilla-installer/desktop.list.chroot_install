@@ -58,7 +58,6 @@ system-config-printer-common
 system-config-printer-udev
 tracker
 ubuntu-drivers-common
-ubuntu-release-upgrader-gtk
 unzip
 vanilla-gnome-default-settings
 wireless-tools
