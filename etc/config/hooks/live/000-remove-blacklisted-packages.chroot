@@ -23,8 +23,7 @@ apt-get autoremove --purge -f -q -y \
     apport \
     snapd \
     update-manager \
-    update-notifier \
-    gparted
+    update-notifier
 
 rm -R ../ubuntu-seeds ../platform
 
