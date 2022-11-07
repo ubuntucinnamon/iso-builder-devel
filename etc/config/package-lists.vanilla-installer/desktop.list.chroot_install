@@ -2,7 +2,7 @@ gpg
 btrfs-progs
 curl
 bash-completion
-adwaita-icon-theme-full
+adwaita-icon-theme-full=43.0-2vanilla1
 acpi
 acpi-call-dkms
 alsa-base
@@ -23,7 +23,7 @@ genisoimage
 ghostscript-x
 gnome-backgrounds
 gnome-color-manager
-gnome-control-center
+gnome-control-center=1:43.0-1vanilla
 gnome-menus
 gnome-online-accounts
 gnome-online-miners
