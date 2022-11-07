@@ -1,1 +1,2 @@
-deb https://repo.vanillaos.org/kinetic ./
+deb http://ppa.launchpad.net/vanilla-os/@CHANNEL/ubuntu @BASECODENAME main
+# deb-src http://ppa.launchpad.net/vanilla-os/@CHANNEL/ubuntu @BASECODENAME main
