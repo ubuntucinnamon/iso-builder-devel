@@ -21,7 +21,7 @@ The following example uses Docker and assumes you have Docker correctly installe
  1) Clone this project & `cd` into it:
 
     ```
-    git clone https://github.com/Vanilla-OS/os.git && cd os
+    git clone https://github.com/Vanilla-OS/vanilla-os-experiments.git && cd vanilla-os-experiments
     ```
 
  2) Configure the channel in the `etc/terraform.conf` (unstable, all).
