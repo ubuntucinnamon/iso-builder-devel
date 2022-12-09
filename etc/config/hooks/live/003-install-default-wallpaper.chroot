@@ -3,7 +3,7 @@
 
 cat > /usr/share/glib-2.0/schemas/90_ubuntuvanillagnome-wallpaper.gschema.override <<EOF
 [org.gnome.desktop.background]
-picture-uri='file:///usr/share/backgrounds/gnome/vanilla-default.webp'
-picture-uri-dark='file:///usr/share/backgrounds/gnome/vanilla-dark.webp'
+picture-uri='file:///usr/share/backgrounds/vanilla/vanilla-default.webp'
+picture-uri-dark='file:///usr/share/backgrounds/vanilla/vanilla-dark.webp'
 EOF
 glib-compile-schemas /usr/share/glib-2.0/schemas/
