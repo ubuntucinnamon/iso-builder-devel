@@ -1,2 +1,2 @@
-deb http://ppa.launchpad.net/vanilla-os/testing/ubuntu kinetic main
-# deb-src http://ppa.launchpad.net/vanilla-os/testing/ubuntu kinetic main
+deb http://ppa.launchpad.net/vanilla-os/stable/ubuntu kinetic main
+# deb-src http://ppa.launchpad.net/vanilla-os/stable/ubuntu kinetic main
