@@ -43,7 +43,6 @@ lb config noauto \
     --debootstrap-options "--exclude=pinephone-tweaks,mobile-tweaks-common,librem5-tweaks,pinetab-tweaks --include=apt-transport-https,ca-certificates,openssl" \
     --checksums md5 \
     --clean \
-    --debootstrap-options "--keyring=/usr/share/keyrings/vanilla_keyring.gpg" \
     "${@}"
 
 
