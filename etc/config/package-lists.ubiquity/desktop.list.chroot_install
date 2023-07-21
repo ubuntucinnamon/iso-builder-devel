@@ -2,6 +2,4 @@
 cargo
 rustc
 python3.9
-ubuntucinnamon-minimal
-ubuntucinnamon-standard
-ubuntucinnamon-desktop
+kde-plasma-desktop
