@@ -23,7 +23,8 @@ echo -e "
 #----------------------#
 "
 apt-get update
-apt-get install -y live-build
+apt-get install -y live-build gnupg2 binutils zstd ca-certificates
+
 
 echo -e "
 #----------------------#
