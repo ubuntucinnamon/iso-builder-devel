@@ -1,21 +1,21 @@
 prompt 0
 
 MENU HIDDEN
-MENU AUTOBOOT Booting Ubuntu Cinnamon Remix live disk in # seconds
+MENU AUTOBOOT Booting pOs live disk in # seconds
 timeout 50
 
 label live-@FLAVOUR@
-	menu label ^Try or install Ubuntu Cinnamon Remix
+	menu label ^Try or install pOs
 	menu default
-	linux /casper/vmlinuz
-	initrd /casper/initrd.lz
+	linux @LINUX@
+	initrd @INITRD@
 	append @APPEND_LIVE@
 
 label live-failsafe
-	menu label Start Ubuntu Cinnamon Remix (Safe Graphics)
+	menu label Start pOs (Safe Graphics)
 	set gfxpayload=keep
-	linux /casper/vmlinuz
-	initrd /casper/initrd.lz
+	linux @LINUX@
+	initrd @INITRD@
 	append @APPEND_LIVE@ nomodeset
 
 label hd
