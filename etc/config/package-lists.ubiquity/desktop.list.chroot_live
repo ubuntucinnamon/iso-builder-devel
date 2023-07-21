@@ -8,7 +8,6 @@ squashfs-tools
 cryptsetup
 shim-signed
 shim-helpers-amd64-signed
-ubiquity-frontend-gtk
 ca-certificates
 btrfs-progs
 expect
