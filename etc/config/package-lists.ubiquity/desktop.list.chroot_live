@@ -1,4 +1,11 @@
-
+live-boot
+live-config
+live-config-systemd
+live-tools
+user-setup
+dosfstools
+squashfs-tools
+cryptsetup
 shim-signed
 shim-helpers-amd64-signed
 
