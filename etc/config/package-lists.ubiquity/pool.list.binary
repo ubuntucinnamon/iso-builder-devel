@@ -1,6 +1,5 @@
 b43-fwcutter
-firmware-b43-installer
-firmware-brcm80211
+bcmwl-kernel-source
 dkms
 intel-microcode
 iucode-tool
@@ -8,8 +7,10 @@ setserial
 user-setup
 
 efibootmgr
+secureboot-db
+
 grub-efi-amd64
 grub-efi-amd64-bin
 grub-efi-amd64-signed
+shim
 shim-signed
-shim-helpers-amd64-signed
