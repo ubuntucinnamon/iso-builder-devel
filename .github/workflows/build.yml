@@ -14,7 +14,10 @@ jobs:
     runs-on: ubuntu-22.04
     container:
       image: debian:latest
-      options: -it
+      volumes:
+        - /proc:/proc
+        - /:/run/host
+      options: ---privileged -it
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
