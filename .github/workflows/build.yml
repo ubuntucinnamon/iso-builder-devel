@@ -11,7 +11,6 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-22.04
     container:
       image: debian:latest
@@ -30,7 +29,7 @@ jobs:
       - name:  ISO Building
         run: ./build.sh etc/teraform.conf
         
-     - uses: actions/upload-artifact@v3
-       with:
-        name: Debian
-        path: /iso-builder-devel/builds
+      - uses: actions/upload-artifact@v3
+        with:
+         name: Debian
+         path: /iso-builder-devel/builds
