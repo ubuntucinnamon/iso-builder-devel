@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     container:
-      image: debian:latest
+      image: debian:unstable 
       volumes:
         - /proc:/proc
         - /:/run/host
