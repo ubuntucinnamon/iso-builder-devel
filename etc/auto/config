@@ -4,53 +4,52 @@ set -e
 
 . ./terraform.conf
 
-# HWE starts with y, Y or 1?
-if [ "$HWE" = "yes" ]; then
-    KERNEL_FLAVORS="generic-hwe-${BASEVERSION}"
-    XORG_HWE="xserver-xorg-hwe-${BASEVERSION}"
+if [ "$HWE_KERNEL" = "yes" ]; then
+    KERNEL_FLAVORS="amd64-hwe-${BASEVERSION}"
 else
-    KERNEL_FLAVORS="generic"
+    KERNEL_FLAVORS="amd64"
 fi
 
 lb config noauto \
     --architectures "$ARCH" \
-    --mode ubuntu \
-    --initramfs auto \
+    --mode debian \
     --distribution "$BASECODENAME" \
     --parent-distribution "$BASECODENAME" \
-    --archive-areas "main restricted universe multiverse" \
-    --parent-archive-areas "main restricted universe multiverse" \
-    --linux-packages linux-image \
+    --archive-areas "main non-free" \
+    --parent-archive-areas "main" \
+    --linux-packages "linux-image linux-headers" \
     --linux-flavours "$KERNEL_FLAVORS" \
-    --bootappend-live "boot=casper maybe-ubiquity quiet splash" \
+    --bootappend-live "boot=live config username=vanilla user-fullname=Bee quiet splash" \
     --mirror-bootstrap "$MIRROR_URL" \
     --parent-mirror-bootstrap "$MIRROR_URL" \
-    --mirror-chroot-security "http://security.ubuntu.com/ubuntu/" \
-    --parent-mirror-chroot-security "http://security.ubuntu.com/ubuntu/" \
-    --mirror-binary-security "http://security.ubuntu.com/ubuntu/" \
-    --parent-mirror-binary-security "http://security.ubuntu.com/ubuntu/" \
-    --mirror-binary "http://archive.ubuntu.com/ubuntu/" \
-    --parent-mirror-binary "http://archive.ubuntu.com/ubuntu/" \
-    --keyring-packages ubuntu-keyring \
+    --mirror-chroot-security "http://deb.debian.org/debian-security" \
+    --parent-mirror-chroot-security "http://deb.debian.org/debian-security" \
+    --mirror-binary-security "http://deb.debian.org/debian-security" \
+    --parent-mirror-binary-security "http://deb.debian.org/debian-security" \
+    --mirror-binary "https://repo.vanillaos.org" \
+    --parent-mirror-binary "https://repo.vanillaos.org" \
+    --keyring-packages debian-keyring \
     --apt-options "--yes --option Acquire::Retries=5 --option Acquire::http::Timeout=100" \
+    --apt-recommends false \
     --cache-packages false \
-    --cache-stages false \
     --uefi-secure-boot enable \
-    --binary-images iso-hybrid \
+    --binary-images iso \
     --iso-application "$NAME" \
     --iso-volume "$NAME" \
     --firmware-binary false \
     --firmware-chroot false \
-    --zsync false \
     --security true \
-    --updates true \
-    --debootstrap-options "--exclude=pinephone-tweaks,mobile-tweaks-common,librem5-tweaks,pinetab-tweaks" \
+    --updates false \
+    --debootstrap-options "--exclude=pinephone-tweaks,mobile-tweaks-common,librem5-tweaks,pinetab-tweaks --include=apt-transport-https,ca-certificates,openssl" \
+    --checksums md5 \
+    --clean \
+    --debootstrap-options "--keyring=/usr/share/keyrings/vanilla_keyring.gpg" \
     "${@}"
 
 
 # replace channel and suite
-sed -i "s/@CHANNEL/$CHANNEL/" config/archives/*.list*
-sed -i "s/@BASECODENAME/$BASECODENAME/" config/archives/*.list*
+# sed -i "s/@CHANNEL/$CHANNEL/" config/archives/*.list*
+# sed -i "s/@BASECODENAME/$BASECODENAME/" config/archives/*.list*
 
 DATE=$(date +%Y%m%d)
 sed -i "s/@CHANNEL/$CHANNEL/" config/includes.binary/.disk/info
@@ -60,4 +59,8 @@ sed -i "s/@DISTRO_NAME/$NAME/" config/includes.binary/.disk/info
 sed -i "s/@VERSION/$VERSION/" config/includes.binary/.disk/info
 sed -i "s/@DATE/$DATE/" config/includes.binary/.disk/info
 
-sed -i "s/@XORG_HWE/$XORG_HWE/" config/package-lists/desktop.list.chroot_install
+sed -i "s/@DISTRO_NAME/$NAME/" config/hooks/live/004-set-os-info.chroot
+sed -i "s/@VERSION/$VERSION/" config/hooks/live/004-set-os-info.chroot
+sed -i "s/@CHANNEL/$CHANNEL/" config/hooks/live/004-set-os-info.chroot
+sed -i "s/@CODENAME/$CODENAME/" config/hooks/live/004-set-os-info.chroot
+sed -i "s/@BASECODENAME/$BASECODENAME/" config/hooks/live/004-set-os-info.chroot
