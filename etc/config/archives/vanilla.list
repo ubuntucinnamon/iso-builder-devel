@@ -1,1 +1,1 @@
-deb https://download.opensuse.org/repositories/home:/fabricators:/orchid/Debian_Unstable/ ./
+deb http://deb.debian.org/debian/dists/unstable/
