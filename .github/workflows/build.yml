@@ -13,8 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:latest
-      options: -it
+      image: debian:latest
+      options: --privilleged -it
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
