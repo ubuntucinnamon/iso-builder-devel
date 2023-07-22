@@ -23,13 +23,13 @@ lb config noauto \
     --bootappend-live "boot=casper maybe-ubiquity quiet splash" \
     --mirror-bootstrap "$MIRROR_URL" \
     --parent-mirror-bootstrap "$MIRROR_URL" \
-    --mirror-chroot-security "http://security.ubuntu.com/ubuntu/" \
-    --parent-mirror-chroot-security "http://security.ubuntu.com/ubuntu/" \
-    --mirror-binary-security "http://security.ubuntu.com/ubuntu/" \
-    --parent-mirror-binary-security "http://security.ubuntu.com/ubuntu/" \
-    --mirror-binary "http://archive.ubuntu.com/ubuntu/" \
-    --parent-mirror-binary "http://archive.ubuntu.com/ubuntu/" \
-    --keyring-packages ubuntu-keyring \
+    --mirror-chroot-security "http://deb.debian.org/debian-security/" \
+    --parent-mirror-chroot-security "http://deb.debian.org/debian-security/" \
+    --mirror-binary-security "http://deb.debian.org/debian/" \
+    --parent-mirror-binary-security "http://deb.debina.org/debian-security/" \
+    --mirror-binary "http://deb.debian.org/debian/" \
+    --parent-mirror-binary "http://deb.debian.org/debian/" \
+    --keyring-packages debian-keyring \
     --apt-options "--yes --option Acquire::Retries=5 --option Acquire::http::Timeout=100" \
     --apt-recommends false \
     --cache-packages false \
