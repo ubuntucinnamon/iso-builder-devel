@@ -16,8 +16,8 @@ lb config noauto \
     --initramfs none \
     --distribution "$BASECODENAME" \
     --parent-distribution "$BASECODENAME" \
-    --archive-areas "stable main" \
-    --parent-archive-areas "stable main" \
+    --archive-areas "main" \
+    --parent-archive-areas "main" \
     --linux-packages linux-image \
     --linux-flavours "$KERNEL_FLAVORS" \
     --bootappend-live "boot=casper maybe-ubiquity quiet splash" \
