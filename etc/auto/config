@@ -1,4 +1,4 @@
-#!/bin/sh
+huh#!/bin/sh
 
 set -e
 
@@ -16,8 +16,8 @@ lb config noauto \
     --initramfs none \
     --distribution "$BASECODENAME" \
     --parent-distribution "$BASECODENAME" \
-    --archive-areas "main restricted universe multiverse" \
-    --parent-archive-areas "main restricted universe multiverse" \
+    --archive-areas "stable main" \
+    --parent-archive-areas "stable main" \
     --linux-packages linux-image \
     --linux-flavours "$KERNEL_FLAVORS" \
     --bootappend-live "boot=casper maybe-ubiquity quiet splash" \
@@ -26,7 +26,7 @@ lb config noauto \
     --mirror-chroot-security "http://deb.debian.org/debian-security/" \
     --parent-mirror-chroot-security "http://deb.debian.org/debian-security/" \
     --mirror-binary-security "http://deb.debian.org/debian/" \
-    --parent-mirror-binary-security "http://deb.debina.org/debian-security/" \
+    --parent-mirror-binary-security "http://deb.debian.org/debian-security/" \
     --mirror-binary "http://deb.debian.org/debian/" \
     --parent-mirror-binary "http://deb.debian.org/debian/" \
     --keyring-packages debian-keyring \
